@@ -17,20 +17,22 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 ## Tasks
 
 1. Clone the [CIF Extension Sample](https://github.com/Adobe-Marketing-Cloud/adobe-cif-extension-sample) repository
-	
-	```ruby
-	git clone https://github.com/Adobe-Marketing-Cloud/adobe-cif-extension-sample.git 
-	```
+```
+git clone https://github.com/Adobe-Marketing-Cloud/adobe-cif-extension-sample.git 
+```
 
 2. Navigate into the newly cloned Git repo, switch to the `magento` branch. 
 
-	```ruby
-	cd adobe-cif-extension-sample
-	git checkout magento 
-	```
+```
+cd adobe-cif-extension-sample
+git checkout magento 
+```
 
-3. Clone the [Magento CIF Repository](https://github.com/adobe/commerce-cif-magento) 
-```git clone https://github.com/adobe/commerce-cif-magento```
+3. Navigate back one folder level, clone the [Magento CIF Repository](https://github.com/adobe/commerce-cif-magento) 
+```
+cd ..
+git clone https://github.com/adobe/commerce-cif-magento
+```
 
 4. Setup wskprops file 
 ```wsk property set --apihost adobeioruntime.net --auth <Your auth code> --namespace <Your namespace>```
