@@ -22,7 +22,12 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	git clone https://github.com/Adobe-Marketing-Cloud/adobe-cif-extension-sample.git 
 	```
 
-2. Switch to the `magento` branch. 
+2. Navigate into the newly cloned Git repo, switch to the `magento` branch. 
+
+	```ruby
+	cd adobe-cif-extension-sample
+	git checkout magento 
+	```
 
 3. Clone the [Magento CIF Repository](https://github.com/adobe/commerce-cif-magento) 
 ```git clone https://github.com/adobe/commerce-cif-magento```
