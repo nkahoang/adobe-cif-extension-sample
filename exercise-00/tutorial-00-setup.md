@@ -41,7 +41,7 @@ git clone https://github.com/adobe/commerce-cif-magento
 wsk property set --apihost adobeioruntime.net --auth <Your auth code> --namespace <Your namespace>
 ```
 
-5. In the cloned directory, go to the `customer-deployment` folder.
+5. In the cloned `commerce-cif-magento` directory, go to the `customer-deployment` folder.
 
 6. Copy the `credentials-example.json` file to `credentials.json` file.
 
