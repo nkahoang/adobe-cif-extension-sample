@@ -54,7 +54,7 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	wsk property set --apihost adobeioruntime.net --auth <Your auth code> --namespace <Your namespace>
 	```
 
-5. In the cloned `commerce-cif-magento` directory, go to the `customer-deployment` folder.
+5. In the cloned `commerce-cif-magento` directory, go to the `customer-deployment` directory.
 
 6. Copy the `credentials-example.json` file to `credentials.json` file.
 
@@ -84,27 +84,38 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	`MAGENTO_IGNORE_CATEGORIES_WITH_LEVEL_LOWER_THAN` - category tree level for navigation
 
 8. Update `bindings-namespace` and `customer-namespace` properties in `package.json` file.
-```
-"customer-namespace": "YOUR_NAMESPACE",
-"bindings-namespace": "ccif-core-library",
-```
 
-9. From the `customer-deployment` directory, run ```npm install; npm run deploy```
+	```json
+	"customer-namespace": "YOUR_NAMESPACE",
+	"bindings-namespace": "ccif-core-library",
+	```
+
+9. From the `customer-deployment` directory, run
+
+	```shell
+	npm install; npm run deploy
+	```
 
 10. Confirm that the bindings were successful. 
 
-```
-https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/magento/searchProducts.http?text=jacket
-``` 
+	```
+	https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/magento/searchProducts.http?text=jacket
+	``` 
 
 11. Complete details are available [here](https://github.com/adobe/commerce-cif-magento/tree/master/customer-deployment)
 
-12. In the `serverless.yml` file, you can configure the `cachetime`. Also possible to do using `wsk package update commerce-cif-magento-category@latest --param cachetime 400` command. 
+12. In the `serverless.yml` file, you can configure the `cachetime`.
 
-```
- commerce-cif-magento-category@latest:
-      binding: /${self:custom.bindings-namespace}/commerce-cif-magento-category@latest
-      parameters:
-        cachetime: 300
-        $<<: ${file(credentials.json)}
-```
+   Also possible to do using 
+   
+	```shell
+	wsk package update commerce-cif-magento-category@latest --param cachetime 400
+	``` 
+
+	```
+	 commerce-cif-magento-category@latest:
+	      binding: /${self:custom.bindings-namespace}/commerce-cif-magento-category@latest
+	      parameters:
+		cachetime: 300
+		$<<: ${file(credentials.json)}
+	```
