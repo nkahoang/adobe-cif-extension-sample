@@ -30,9 +30,11 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	```
 
 3. Clone the [Magento CIF Repository](https://github.com/adobe/commerce-cif-magento) 
+
 ```git clone https://github.com/adobe/commerce-cif-magento```
 
 4. Setup wskprops file 
+
 ```wsk property set --apihost adobeioruntime.net --auth <Your auth code> --namespace <Your namespace>```
 
 5. In the cloned directory, go to the `customer-deployment` folder.
