@@ -9,7 +9,7 @@ Exercise 1 - Create a Adobe I/O Hello World Action
 ## Tasks
 
 ```diff
-- WARNING: PLEASE REPLACE seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME} with your FIRSTNAME and LASTNAME: Example: seat-john-doe -
+- WARNING: PLEASE REPLACE seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME} with your FIRSTNAME and LASTNAME: Example: seat-john-doe
 ```
 	
 1. Go into the `adobe-cif-extension-sample` project
