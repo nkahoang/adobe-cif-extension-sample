@@ -8,10 +8,19 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 ## Assumptions
 
 1. You already have an Adobe I/O Runtime namespace.
+
 2. You already have an auth code for your namespace. 
+
 3. You already have a Magento instance and the corresponding connection details.
+
 4. You already have [OpenWhisk CLI](https://github.com/apache/incubator-openwhisk-cli/releases) downloaded and installed.
+
+   MacOS [PATH Variable](https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/) configured to run `wsk` command
+
+   Windows [PATH Variable](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) configured to run `wsk` command
+
 5. You already have an AEM instance setup and running. 
+
 6. You already have [NodeJS](https://nodejs.org/en/download/) and NPM installed. 
 
 ## Tasks
