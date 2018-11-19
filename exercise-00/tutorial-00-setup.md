@@ -60,11 +60,15 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	}
 	```
 
-`MAGENTO_CUSTOMER_TOKEN_EXPIRATION_TIME` - logged in user token expiration for Magento
-`MAGENTO_MEDIA_PATH` - local directory where the product assets are stored in Magento
-`PRODUCT_ATTRIBUTES` - attributes that are relevant to determine the variants, used for display 
-`GRAPHQL_PRODUCT_ATTRIBUTES` - same as above, used for queries
-`MAGENTO_IGNORE_CATEGORIES_WITH_LEVEL_LOWER_THAN` - category tree level for navigation
+	`MAGENTO_CUSTOMER_TOKEN_EXPIRATION_TIME` - logged in user token expiration for Magento
+	
+	`MAGENTO_MEDIA_PATH` - local directory where the product assets are stored in Magento
+	
+	`PRODUCT_ATTRIBUTES` - attributes that are relevant to determine the variants, used for display 
+	
+	`GRAPHQL_PRODUCT_ATTRIBUTES` - same as above, used for queries
+	
+	`MAGENTO_IGNORE_CATEGORIES_WITH_LEVEL_LOWER_THAN` - category tree level for navigation
 
 8. Update `bindings-namespace` and `customer-namespace` properties in `package.json` file.
 ```
