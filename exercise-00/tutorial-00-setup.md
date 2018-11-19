@@ -18,43 +18,47 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 
 1. Clone the [CIF Extension Sample](https://github.com/Adobe-Marketing-Cloud/adobe-cif-extension-sample) repository
 	
-	```ruby
+	```shell
 	git clone https://github.com/Adobe-Marketing-Cloud/adobe-cif-extension-sample.git 
 	```
 
 2. Navigate into the newly cloned Git repo, switch to the `magento` branch. 
 
-	```ruby
+	```shell
 	cd adobe-cif-extension-sample
 	git checkout magento 
 	```
 
 3. Clone the [Magento CIF Repository](https://github.com/adobe/commerce-cif-magento) 
 
-```git clone https://github.com/adobe/commerce-cif-magento```
+	```shell
+	git clone https://github.com/adobe/commerce-cif-magento
+	```
 
 4. Setup wskprops file 
 
-```wsk property set --apihost adobeioruntime.net --auth <Your auth code> --namespace <Your namespace>```
+	```shell
+	wsk property set --apihost adobeioruntime.net --auth <Your auth code> --namespace <Your namespace>
+	```
 
-5. In the cloned directory, go to the `customer-deployment` folder.
+5. In the cloned `commerce-cif-magento` directory, go to the `customer-deployment` folder.
 
 6. Copy the `credentials-example.json` file to `credentials.json` file.
 
 7. Update the `credentials.json` file with your Magento connection details.
-```
-{
-    "MAGENTO_SCHEMA": "http",
-    "MAGENTO_HOST": "xxxxxxx",
-    "MAGENTO_API_VERSION": "V1",
-    "MAGENTO_CUSTOMER_TOKEN_EXPIRATION_TIME": "3600",
-    "MAGENTO_AUTH_ADMIN_TOKEN": "xxxxxx",
-    "MAGENTO_MEDIA_PATH": "media/catalog/product",
-    "PRODUCT_ATTRIBUTES": ["color", "size"],
-    "GRAPHQL_PRODUCT_ATTRIBUTES": ["color", "size"],
-    "MAGENTO_IGNORE_CATEGORIES_WITH_LEVEL_LOWER_THAN": 2
-}
-```
+	```json
+	{
+	    "MAGENTO_SCHEMA": "http",
+	    "MAGENTO_HOST": "xxxxxxx",
+	    "MAGENTO_API_VERSION": "V1",
+	    "MAGENTO_CUSTOMER_TOKEN_EXPIRATION_TIME": "3600",
+	    "MAGENTO_AUTH_ADMIN_TOKEN": "xxxxxx",
+	    "MAGENTO_MEDIA_PATH": "media/catalog/product",
+	    "PRODUCT_ATTRIBUTES": ["color", "size"],
+	    "GRAPHQL_PRODUCT_ATTRIBUTES": ["color", "size"],
+	    "MAGENTO_IGNORE_CATEGORIES_WITH_LEVEL_LOWER_THAN": 2
+	}
+	```
 
 `MAGENTO_CUSTOMER_TOKEN_EXPIRATION_TIME` - logged in user token expiration for Magento
 `MAGENTO_MEDIA_PATH` - local directory where the product assets are stored in Magento
