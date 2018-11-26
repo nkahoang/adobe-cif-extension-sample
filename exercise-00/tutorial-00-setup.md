@@ -112,5 +112,11 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	wsk package update commerce-cif-magento-category@latest --param cachetime 400
 	```
 
-	
+	```shell
+	commerce-cif-magento-category@latest:
+	      binding: /${self:custom.bindings-namespace}/commerce-cif-magento-category@latest
+	      parameters:
+		cachetime: 300
+		$<<: ${file(credentials.json)}
+	```
 
