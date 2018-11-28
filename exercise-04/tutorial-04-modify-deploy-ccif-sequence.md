@@ -7,12 +7,15 @@ Exercise 4 - Integrate CIF Services with AEM
 
 ## Pre work
 
-1. Install the [We.Retail CCIF Connector](weretail-ccif-connector-all-1.0.2.zip)
-2. Configure the CCIF Connector Service
+1. Install [AEM Core Components 2.2.2](https://github.com/adobe/aem-core-wcm-components/releases/download/core.wcm.components.reactor-2.2.2/core.wcm.components.all-2.2.2.zip)
+
+2. Install the [We.Retail CCIF Connector](weretail-ccif-connector-all-1.0.2.zip)
+
+3. Configure the CCIF Connector Service
 
 ![CCIF Connector Configuration Service](ccif-connector-configuration.png)
 
-3. Navigate to `http://localhost:4502/content/we-retail/us/en.html`, verify that the page renders with the “Featured Products” and “New Arrivals” products populated
+4. Navigate to `http://localhost:4502/content/we-retail/us/en.html`, verify that the page renders with the “Featured Products” and “New Arrivals” products populated
 
    Optional: Navigate to `http://localhost:4502/aem/products.html/var/commerce/products`, verify that “Cloud Commerce Products” catalog is available and is able to be traversed to products.
 
