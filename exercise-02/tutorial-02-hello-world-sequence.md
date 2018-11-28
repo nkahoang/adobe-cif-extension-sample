@@ -58,8 +58,8 @@ Exercise 2 - Create a Adobe I/O Hello World Sequence
 	```
 	
 8. Expected output
-	```ruby
-		{
+	```json
+	{
 	    "array": [
 		"Larry",
 		"is",
