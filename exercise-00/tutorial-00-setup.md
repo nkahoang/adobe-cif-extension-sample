@@ -42,11 +42,11 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 	git checkout magento 
 	```
 
-3. Navigate one directory structure up, clone the [Magento CIF Repository](https://github.com/adobe/commerce-cif-magento) 
+3. Navigate one directory structure up, clone the [Magento CIF Repository](https://github.com/jhuangsoftware/commerce-cif-magento) 
 
 	```shell
 	cd ..
-	git clone https://github.com/adobe/commerce-cif-magento
+	git clone https://github.com/jhuangsoftware/adobe-cif-extension-sample.git
 	```
 
 4. Setup wskprops file 
