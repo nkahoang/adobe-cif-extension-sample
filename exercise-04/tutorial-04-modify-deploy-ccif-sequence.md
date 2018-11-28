@@ -12,6 +12,10 @@ Exercise 4 - Integrate CIF Services with AEM
 
 ![CCIF Connector Configuration Service](ccif-connector-configuration.png)
 
+3. Navigate to `http://localhost:4502/content/we-retail/us/en.html`, verify that the page renders with the “Featured Products” and “New Arrivals” products populated
+
+   Optional: Navigate to `http://localhost:4502/aem/products.html/var/commerce/products`, verify that “Cloud Commerce Products” catalog is available and is able to be traversed to products.
+
 ## Tasks
 
 ```diff
