@@ -26,22 +26,21 @@ Exercise 4 - Integrate CIF Services with AEM
 ```
 
 1. Go to We.Retail Page
-
-    ```
-    http://localhost:4502/content/we-retail/us/en.html 
-    ```
+   ```
+   http://localhost:4502/content/we-retail/us/en.html 
+   ```
 
 
 2. Navigate to product page **El Gordo Down Jacket**
 
-    Click on **El Gordo Down Jacket**
-        
-    ```
-    http://localhost:4502/editor.html/content/we-retail/us/en/product.meskwielt.html
-    ```
+   Click on **El Gordo Down Jacket**
 
-    see **El Gordo Down Jacket** product page
-    ![Orginal Product](ElGordoJacker-original.png)
+   ```
+   http://localhost:4502/editor.html/content/we-retail/us/en/product.meskwielt.html
+   ```
+
+   see **El Gordo Down Jacket** product page
+   ![Orginal Product](ElGordoJacker-original.png)
 
 4. Update the sequence
 
