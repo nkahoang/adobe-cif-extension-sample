@@ -13,6 +13,10 @@ Exercise 4 - Integrate CIF Services with AEM
 
 3. Configure the CCIF Connector Service
 
+   | Field Name                 | Field Value          |
+   | -------------------------- | -------------------- |
+   | CCIF Service Endpoint      | `https://adobeioruntime.net/api/v1/web/[NAMESPACE]/magento/`       |
+
    ![CCIF Connector Configuration Service](ccif-connector-configuration.png)
 
 4. Navigate to `http://localhost:4502/content/we-retail/us/en.html`, verify that the page renders with the “Featured Products” and “New Arrivals” products populated
@@ -30,7 +34,6 @@ Exercise 4 - Integrate CIF Services with AEM
    http://localhost:4502/content/we-retail/us/en.html 
    ```
 
-
 2. Navigate to product page **El Gordo Down Jacket**
 
    Click on **El Gordo Down Jacket**
@@ -44,11 +47,11 @@ Exercise 4 - Integrate CIF Services with AEM
 
 4. Update the sequence
 
-    ```shell
-    wsk action update magento/searchProducts --sequence "commerce-cif-magento-product@latest/searchProductsService,seat-X-X/applyDiscount,commerce-cif-magento-common@latest/webActionTransformer" --web true
+   ```shell
+   wsk action update magento/searchProducts --sequence "commerce-cif-magento-product@latest/searchProductsService,seat-X-X/applyDiscount,commerce-cif-magento-common@latest/webActionTransformer" --web true
     ```
     
-    updates the default **magento/searchProduct** sequence to use our **applyDiscount** action from exercise 3.
+   updates the default **magento/searchProduct** sequence to use our **applyDiscount** action from exercise 3.
 
 5. Refresh the product page
     
