@@ -14,67 +14,67 @@ Exercise 3 - Create a CIF Package with Action Sequence
 
 2. Create Action 
 
-    ```ruby
+    ```shell
     wsk action create seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/applyDiscount applyDiscount.js --param discountCategory 17
     ```
 
-	For the "discountCategory" parameter we provide a default value, which is used if category is not provided as a URL parameter. The category used here is Men's Coats. See step 6.
+    For the "discountCategory" parameter we provide a default value, which is used if category is not provided as a URL parameter. The category used here is Men's Coats. See step 6.
 
-	Example:
+   Example:
 
-    ```ruby
-    wsk action create seat-john-doe/applyDiscount applyDiscount.js --param discountCategory 17
-    ```
+   ```shell
+   wsk action create seat-john-doe/applyDiscount applyDiscount.js --param discountCategory 17
+   ```
 
 3. Create a Action Sequence
 
-	```ruby
-    wsk action create seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts --sequence "commerce-cif-magento-product@latest/searchProductsService,seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/applyDiscount,commerce-cif-magento-common@latest/webActionTransformer" --web true
-    ```
+   ```shell
+   wsk action create seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts --sequence "commerce-cif-magento-product@latest/searchProductsService,seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/applyDiscount,commerce-cif-magento-common@latest/webActionTransformer" --web true
+   ```
 
-    Expected output
-    ```ruby
-    ok: created action seat-X-X/getDiscountedProducts
-    ```
+   Expected output
+   ```shell
+   ok: created action seat-X-X/getDiscountedProducts
+   ```
     
-    The seqeunce uses two actions (`searchProductsService` & `webActionTransformer`) from the `commerce-cif-magento-product@latest` and `commerce-cif-magento-common@latest` packages.
+   The seqeunce uses two actions (`searchProductsService` & `webActionTransformer`) from the `commerce-cif-magento-product@latest` and `commerce-cif-magento-common@latest` packages.
 
-    You can run
-    ```ruby
-    wsk package get /YOUR_NAMESPACE/commerce-cif-magento-product@latest
-    ```
-    to see which OpenWhisk actions are contained in that package.
+   You can run
+   ```shell
+   wsk package get /YOUR_NAMESPACE/commerce-cif-magento-product@latest
+   ```
+   to see which OpenWhisk actions are contained in that package.
 
-    Learn more about [packages](https://github.com/apache/incubator-openwhisk/blob/master/docs/packages.md) &  [web actions](https://github.com/apache/incubator-openwhisk/blob/master/docs/webactions.md)
+   Learn more about [packages](https://github.com/apache/incubator-openwhisk/blob/master/docs/packages.md) &  [web actions](https://github.com/apache/incubator-openwhisk/blob/master/docs/webactions.md)
 
 4. Check if the action sequence is created
 
-	```ruby
-    wsk action list
-    ```
-
-    Expected output
-   
-    ```ruby 
-    actions
-    /YOUR_NAMESPACE/seat-X-X/applyDiscount                                private nodejs:6
-    /YOUR_NAMESPACE/seat-X-X/hello-world                                  private nodejs:6
-    /YOUR_NAMESPACE/seat-X-X/getDiscountedProducts                        private sequence
-    /YOUR_NAMESPACE/magento/searchProducts                               private sequence
-    /YOUR_NAMESPACE/magento/postShippingMethod                           private sequence
-    /YOUR_NAMESPACE/magento/postPayment                                  private sequence
-    ...
-    ```
-
-5. Check if the newly created sequence has the right actions configured 
-
-	```ruby
-    wsk action get seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts
-    ```
+   ```shell
+   wsk action list
+   ```
 
    Expected output
    
-   ```ruby 
+   ```shell 
+   actions
+   /YOUR_NAMESPACE/seat-X-X/applyDiscount                                private nodejs:6
+   /YOUR_NAMESPACE/seat-X-X/hello-world                                  private nodejs:6
+   /YOUR_NAMESPACE/seat-X-X/getDiscountedProducts                        private sequence
+   /YOUR_NAMESPACE/magento/searchProducts                               private sequence
+   /YOUR_NAMESPACE/magento/postShippingMethod                           private sequence
+   /YOUR_NAMESPACE/magento/postPayment                                  private sequence
+   ...
+   ```
+
+5. Check if the newly created sequence has the right actions configured 
+
+   ```shell
+   wsk action get seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts
+   ```
+
+   Expected output
+   
+   ```json 
    ok: got action seat-john-doe/getDiscountedProducts
    {
        "namespace": "YOUR_NAMESPACE/seat-X-X",
@@ -123,35 +123,36 @@ Exercise 3 - Create a CIF Package with Action Sequence
        },
        "publish": false
    }
+   ```
+   
+6. Open a browser and navigate to the URL and see the response (as you can see discount is applied)
+   
+   **Sample call 1**: apply discount to default category - men's coats
    
    ```
-6. Open PostMan and run the following command and see the response (as you can see discount is applied)
+   https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts.http?text=jacket
+   ```
+   discount is applied to all product in the men's coat category, product name is suffied as well
 
-	**Sample call 1**: apply discount to default category - men's coats
-	```ruby
-    GET https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts.http?text=jacket
-    ```
-	discount is applied to all product in the men's coat category, product name is suffied as well
-
-	**Sample call 2**: apply discount to default category provide as param
-	```ruby
-    GET https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts.http?text=shirt&discountCategory=15
-    ```
-	discount is applied to all product in the men's > shirts category, product name is suffixed as well
+   **Sample call 2**: apply discount to default category provide as param
+   ```
+   GET https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/seat-{YOUR_FIRSTNAME}-{YOUR_LASTNAME}/getDiscountedProducts.http?text=shirt&discountCategory=15
+   ```
+   discount is applied to all product in the men's > shirts category, product name is suffixed as well
 
 7. **Bonus**: Debug I/O Runtime actions
 
-    Run the OpenWhisk Cli to poll all action invocation messages
-    ```ruby
-    wsk activation poll
-    ````
+   Run the OpenWhisk Cli to poll all action invocation messages
+   ```shell
+   wsk activation poll
+   ````
+   
+   Re-run URL calls from Step 6.
 
-    Re-run URL calls from Step 6.
+   Expected output: get information and logging information from you actions
 
-    Expected output: get information and logging information from you actions
-
-    Hint: you can also do a combination of `wsk activation list` and `wsk activation get <id>` to get action invocation details.
+   Hint: you can also do a combination of `wsk activation list` and `wsk activation get <id>` to get action invocation details.
 
 8. Overall outcome
 
-![Image of ex3 outcome](../Resources/ex3.png)
+   ![Image of ex3 outcome](../Resources/ex3.png)
