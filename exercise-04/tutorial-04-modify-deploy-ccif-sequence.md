@@ -15,7 +15,7 @@ Exercise 4 - Integrate CIF Services with AEM
 
    | Field Name                 | Field Value          |
    | -------------------------- | -------------------- |
-   | CCIF Service Endpoint      | `https://adobeioruntime.net/api/v1/web/[NAMESPACE]/magento/`       |
+   | CCIF Service Endpoint      | `https://adobeioruntime.net/api/v1/web/[YOUR_NAMESPACE]/magento/`       |
 
    ![CCIF Connector Configuration Service](ccif-connector-configuration.png)
 
