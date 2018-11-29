@@ -13,7 +13,7 @@ Exercise 4 - Integrate CIF Services with AEM
 
 3. Configure the CCIF Connector Service
 
-![CCIF Connector Configuration Service](ccif-connector-configuration.png)
+   ![CCIF Connector Configuration Service](ccif-connector-configuration.png)
 
 4. Navigate to `http://localhost:4502/content/we-retail/us/en.html`, verify that the page renders with the “Featured Products” and “New Arrivals” products populated
 
@@ -27,7 +27,7 @@ Exercise 4 - Integrate CIF Services with AEM
 
 1. Go to We.Retail Page
 
-    ```ruby
+    ```
     http://localhost:4502/content/we-retail/us/en.html 
     ```
 
@@ -36,7 +36,7 @@ Exercise 4 - Integrate CIF Services with AEM
 
     Click on **El Gordo Down Jacket**
         
-    ```ruby
+    ```
     http://localhost:4502/editor.html/content/we-retail/us/en/product.meskwielt.html
     ```
 
