@@ -23,9 +23,11 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 
 6. You already have [NodeJS](https://nodejs.org/en/download/) and NPM installed. 
 
-	```shell
-	node -v
-	```
+   ```shell
+   node -v
+   ```
+   
+7. Git installed.  Recommend [GitHub Desktop](https://desktop.github.com/) for new Git users.
 
 ## Tasks
 
