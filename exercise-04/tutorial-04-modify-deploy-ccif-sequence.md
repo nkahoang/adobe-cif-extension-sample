@@ -9,7 +9,7 @@ Exercise 4 - Integrate CIF Services with AEM
 
 1. Install [AEM Core Components 2.2.2](https://github.com/adobe/aem-core-wcm-components/releases/download/core.wcm.components.reactor-2.2.2/core.wcm.components.all-2.2.2.zip)
 
-2. Install the [We.Retail CCIF Connector](weretail-ccif-connector-all-1.0.2.zip)
+2. Install the [We.Retail CCIF Connector](weretail-ccif-connector-all-1.0.2.zip) - __NOTE: This package is for demo purposes ONLY and not supported by Adobe. Please don't use this in implementation__
 
 3. Configure the CCIF Connector Service
 
