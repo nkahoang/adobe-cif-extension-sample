@@ -88,26 +88,26 @@ The objective of this exercise is to setup your custom Adobe I/O Runtime namespa
 
 8. Update `bindings-namespace` and `customer-namespace` properties in `package.json` file.
 
-	```json
-	"customer-namespace": "YOUR_NAMESPACE",
-	"bindings-namespace": "ccif-core-library",
-	```
+   ```json
+   "customer-namespace": "YOUR_NAMESPACE",
+   "bindings-namespace": "ccif-core-library",
+   ```
 
 9. From the `customer-deployment` directory, run
 
-	```shell
-	npm install; npm run deploy
-	```
+   ```shell
+   npm install; npm run deploy
+   ```
 
 10. Confirm that the bindings were successful. 
 
-	```
-	https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/magento/searchProducts.http?text=jacket
-	``` 
+    ```
+    https://adobeioruntime.net/api/v1/web/YOUR_NAMESPACE/magento/searchProducts.http?text=jacket
+    ``` 
 
-11. Complete details are available [here](https://github.com/adobe/commerce-cif-magento/tree/master/customer-deployment)
+    Complete details are available [here](https://github.com/adobe/commerce-cif-magento/tree/master/customer-deployment)
 
-12. In the `serverless.yml` file, you can configure the `cachetime`.
+11. Optional: In the `serverless.yml` file, you can configure the `cachetime`.
 
     Also possible to do using 
    
