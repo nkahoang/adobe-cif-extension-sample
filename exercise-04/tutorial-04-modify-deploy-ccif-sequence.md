@@ -45,10 +45,12 @@ Exercise 4 - Integrate CIF Services with AEM
    see **El Gordo Down Jacket** product page
    ![Orginal Product](ElGordoJacker-original.png)
 
-4. Update the sequence (base on the exercise-03)
+4. Update the sequence (based on the exercise-03)
+
+   Replace FIRST_NAME, LAST_NAME and YOUR_NAMESPACE
 
    ```shell
-   wsk action update {YOUR_NAMESPACE}magento/searchProducts --sequence "commerce-cif-magento-product@latest/searchProductsService,seat-{FIRST_NAME}-{LAST_NAME}/applyDiscount,commerce-cif-magento-common@latest/webActionTransformer" --web true
+   wsk action update {YOUR_NAMESPACE}/magento/searchProducts --sequence "commerce-cif-magento-product@latest/searchProductsService,seat-{FIRST_NAME}-{LAST_NAME}/applyDiscount,commerce-cif-magento-common@latest/webActionTransformer" --web true
     ```
     
    updates the default **magento/searchProduct** sequence to use our **applyDiscount** action from exercise 3.
